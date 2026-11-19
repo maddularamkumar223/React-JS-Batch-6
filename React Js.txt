@@ -1,0 +1,386 @@
+React Js
+
+	Duration:- 45+ Classes- 3 Projects
+
+	1. JS Concepts
+	2. What is React Js
+	3. Install
+	4. JSX
+	5. Components
+	6. Props
+	7. Hooks
+	8. State
+	9. Conditional Rendering
+	10. Ref
+	11. Form handling - Project
+	12. Context API
+	13. Routing
+	14. Component Life Cycle Methods
+	15. useEffect - Project
+
+	16. Redux ToolKit - Project
+
+
+React JS
+
+	It is used to build the single Page application.
+	It is a JS library.
+
+	Ex: Facebook, Instagram, LinkedIn, etc...
+
+	Js Concepts
+
+	1. var, let, const
+	2. function - arrow function, hof, callback
+	3. array Methods- map, filter, reduce, find, etc...
+	4. Objects - Read the object Data.
+	5. Dom Basic
+	6. Promises
+	7. Events
+	8. Destructuring
+	9. Spread And Rest Operators
+	10. Modules	
+
+
+
+
+
+
+
+
+	Var, Let, Const: These all are the variable declarations.
+
+	syntax: variable Declaration Identifier = value;
+
+		var a = 10;
+		let b = 20;
+		const c = 30;
+
+
+		Declaration and Initialization
+		Only Declaration
+		Only Initialization
+		Redeclaration
+		Reinitialization
+
+		var		let		const
+
+	D & I	T		T		T
+
+	D	T		T		F
+	
+	I	T		T		F	
+
+	RD	T		F		F
+
+	RI	T		T		F
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Functions
+
+		Function is a block of code we can reuse n number of times.
+	
+		1. Arrow Function
+
+			It is a syntactic sugar.
+
+			syntax: ([paramters]) => {//code}
+
+			variable declaration identifier = ([paramters]) => {//code}
+			identifier([arguments]) -function call
+
+			Example: 
+
+			let demo = () =>{ console.log("I am a demo funcion")}
+			demo() // I am a demo function
+
+		case1: If we have only one line execution then no need to use the curly brackets.\\		
+			let demo = () => clg("I am a demo function")
+				demo()
+
+		case2: If we dont have any parameters then no need to use the parenthesis. In that place we can use $ or _ .
+
+			let demo1 = _ / $ => clg("I am a demo1 function")
+			 demo1() // I am a demo1 function 
+
+		case3: if we have only one parameter no need to use the parenthesis.
+
+			let username = username => clg(`My Username is ${userName}`) 
+			
+				username("Ram")
+
+		Return Statements
+
+			1. Implicit Return: When we have only one line execution then we can use the implicit return.
+			
+				ex:- let add = (number1, number2) => number1+number2;
+
+					clg(add(10,20))
+
+
+			2. Explicit Return
+
+				We are adding the return keyword.
+				
+				ex: let sub = (number1,number2) => {
+					return number1 -number2
+				}
+			
+				clg(sub(20,10))
+
+	HOF(Higher Order Function): A function which accepts a another function as an argument that function we call it as a higher order function.
+
+	Callback function: The function we are passing as an arguments that we call it as callback function. 
+
+		let cal = (a,b,operation) => operation(a,b) 
+
+		let add = (a,b) => clg(a+b)
+		let sub = (a,b) => clg(a-b)
+
+
+		cal(20,10, add)	 // 30	
+		cal(30,20,sub) // 10		
+
+
+	
+Objects
+
+	It is used to store the real time data in key and value format.
+
+	variable Declaration obj_name = {
+					   key: value,
+					   key: value
+					}
+
+	let details = {
+			name: "Ravi",
+			age: 25
+		      }
+
+	To access the object values we have two ways.
+	
+		1. Dot notation(.)
+		2. Box notation(["key"])
+
+	let details = {
+			name: "Ravi",
+			age: 25
+		      }
+	
+		clg(details.name) // Ravi
+		clg(details.age) // 25
+		clg(details["name"]) // Ravi
+		clg(details["age"]) // 25
+
+
+Array ([]):
+
+	It is used to store the multiple data in a single variable.
+	
+	varaiable declaration variable_name = [value1,value2,...]
+
+	let arr =  [1,2,3,4,5,6,7,8,9,"asd"]
+
+	clg(arr[9]) // asd
+	clg(arr[5]) // 6
+	clg(arr[10])// undefined
+
+	1. map(function): It is used to iterate oven an array and returns an new array
+
+		syntax:- arr_name.map((initial_value,index,array)=>{//code})
+
+		let names = ["siri", "siva","ram","harika","kumari"]
+		
+			o/p:- [4,4,3,6,6]
+
+		let name_lengths = names.map(value => value.length)
+			clg(name_lengths) // [4,4,3,6,6] 
+
+	2. Filter(function): It is used to filter the values based on the condition and it will return an array with filtered values
+
+		syntax: arr_name.filter((initial_value,index,array)=> condition)
+
+		let filterEvenLength = names_lengths.filter(value => value%2===0)
+			clg(filterEvenLength) // [4,4,6,6]
+
+
+
+	3. reduce(function): It is used to convert the multiple values to single value.
+
+	syntax: arr_name.reduce((accumulater,initial_value) => operation, [accumulater default value])
+
+	let sumValues = filterEvenLength.reduce((total,value)=> total+=value,0)
+		clg(sumvalues) // 20
+
+	
+	4. find(function): It is used to find the value based on the condition and it will return that single value.
+
+
+
+
+
+
+	Destructuring
+
+		1. Array Destructuring
+		2. Object Destructuring
+
+
+	1. Array Destructuring
+		
+		let arr = ["sofa","clothes","beds","chairs",["charger,tablets]]
+			clg(arr[1])
+
+		let [a,b,c,d] = arr
+		clg(b) // clothes
+		
+		let [,,,chairs,[,tablets]] = arr
+
+	Object Destructuring
+
+		
+		let productDetails = {
+					name:"Mouse",
+					price:2000,
+					material:"Metal"
+					rating:{
+						rate:4.5,
+						count:5	
+					}
+				
+				}
+
+		let {name,price,material} = productDetails
+		let {price,material} = productDetails
+		let {rating:{rate,count}} = productDetails
+
+
+Spread And Rest Operators(...)
+
+	If we are using the (...) in LHS we call it as a rest operator
+	if we are using the (...) in RHS we call it as a spread operator
+
+	The rest operator return type is an array that array contains remaining values.
+
+
+	let arr = ["sofa","clothes","beds","chairs",["charger,tablets]]
+
+	let [sofa,clothes,...rest] = arr
+
+
+	let arr2 = [1,2,3,4,5,6]
+
+	let arr3 = [...arr,...arr2]
+			 
+
+
+
+
+
+
+
+
+
+
+Modules
+
+	It is used to export and import the data from different files.
+
+	Exports: We have two types of exports are there.
+
+		1. Named Export - N number of exports will accept from single file
+		2. Default Export - Only one data you will export.
+
+	Import:
+
+		How to import data from file with Named Export : 
+			
+			import {name1, name2,name3,...} from "file name.js"
+
+		How to import the data from file with default export
+
+			import name from "filename.js"
+
+
+Promise
+	It is used to convert the sync JS to async JS.
+	It is used to handle the api.
+
+	For the promise we have three stages
+
+	1. Pending
+	2. Fulfilled
+	3. Rejected
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
