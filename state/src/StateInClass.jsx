@@ -5,6 +5,7 @@ export default class StateInClass extends Component {
     super();
     this.state = {
       count: 0,
+      name: "",
     };
   }
   render() {
